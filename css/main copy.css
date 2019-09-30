@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap');
+
+body {
+    background-color: rgb(44, 40, 65);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.1em;
+}
+
+.wrapper {
+    max-width: 1000px;
+    margin: 50px auto 0;
+    padding: 20px 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 3px 3px 10px 1px rgb(44, 40, 65);
+}
+
+.requests {
+    display: table;
+    width: 100%;
+}
+
+.requests__thead {
+    display: table-header-group;
+    font-weight: bold;
+    text-align: center;
+    color:  rgb(44, 40, 65);
+}
+
+.requests__row {
+    display: table-row;
+    text-align: center;
+}
+
+.requests__tbody .requests__row:hover {
+    background-color: rgba(100, 148, 237, 0.5);
+}
+
+.requests__tbody {
+    display: table-row-group;
+}
+
+.requests__cell {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 1em;
+}
+
+.input-form,
+.filters {
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   padding: 30px 0;
+   border-bottom: 2px solid rgb(44, 40, 65);
+}
+
+button,
+select {
+    cursor: pointer;
+}
+
+.select-type option:nth-child(1),
+.select-department option:nth-child(1) {
+    color: darkgray;
+}
+
+.header {
+    color:  rgb(44, 40, 65);
+    text-align: center;
+}
+
+.priority-block {
+    display: flex;
+    align-items: center;
+}
+
+.priority-label {
+    padding-left: 15px;
+}
+
+.priority {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: text-bottom;
+}
+
+.priority-1 {
+    background: radial-gradient(#ff1e1e, #ff3b3b);
+}
+.priority-2 {
+    background: radial-gradient(#fc8320, #ffaf7a);
+}
+.priority-3 {
+    background: radial-gradient(#46b675, #7fce90);
+    /* background: radial-gradient(#55ddff, #0081b5); */
+}
+
+.priority::after {
+    content: "";
+    background: rgba(121, 121, 121, 0.5);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.priority-1:hover,
+[type="radio"]:checked ~ .priority-1 {
+    box-shadow: 0 0 5px 0 #ff1e1e;
+}
+
+.priority-2:hover,
+[type="radio"]:checked ~ .priority-2 {
+    box-shadow: 0 0 5px 0 #fc8320;
+}
+
+.priority-3:hover,
+[type="radio"]:checked ~ .priority-3 {
+    box-shadow: 0 0 5px 0 #46b675;
+}
+
+[type="radio"] {
+    display: none;
+}
+
+[type="radio"]:checked ~ .priority::after {
+    display: none;
+}
